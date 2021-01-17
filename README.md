@@ -14,6 +14,7 @@ The goals of this project are:
 
 * Automatize as much as possible all the things through makefile/taskfile.
 * Should be operating system agnostic
+* Provide an easy way to publish documents through Github Actions
 
 ## Usage
 
@@ -44,6 +45,7 @@ The project comes with various Latex projects:
 * `src/sample`: A sample page
 * `src/umons`: [Latex classes][umons latex classes] form [uMons university][http umons].
 * `src/umons-*`: Example documents using uMons classes.
+* `src/ucl-beamer`: Sample document using [UCL beamer][http ucl-beamer] templates.
 
 ## FAQ
 
@@ -66,3 +68,4 @@ The project comes with various Latex projects:
 [computer science cheat sheets]: https://github.com/flavioschneider/ethzcheatsheets
 [umons latex classes]: https://github.com/Chris00/latex-umons
 [http umons]: https://web.umons.ac.be/
+[http ucl]: https://github.com/UCL/ucl-beamer
