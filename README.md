@@ -69,3 +69,4 @@ The project comes with various Latex projects:
 [umons latex classes]: https://github.com/Chris00/latex-umons
 [http umons]: https://web.umons.ac.be/
 [http ucl]: https://github.com/UCL/ucl-beamer
+[http ucl-beamer]: https://github.com/UCL/ucl-beamer
