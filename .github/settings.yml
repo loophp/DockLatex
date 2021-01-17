@@ -42,4 +42,4 @@ repository:
     has_projects: false
     has_wiki: false
     name: presentation
-    private: false
+    private: true
