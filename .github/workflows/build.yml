@@ -40,6 +40,8 @@ jobs:
             output: umons-memoire
           - input: src/umons-tests/index
             output: umons-tests
+          - input: src/ucl-beamer/index
+            output: ucl-beamer
     steps:
       - name: Check out source files
         uses: actions/checkout@v2
@@ -95,6 +97,7 @@ jobs:
           - input: umons-letter
           - input: umons-memoire
           - input: umons-tests
+          - input: ucl-beamer
 
     steps:
       - name: Download build assets (${{ matrix.assets.input }})
