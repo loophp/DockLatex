@@ -56,7 +56,7 @@ jobs:
           root_file: ${{ matrix.sources.input }}.tex
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build -jobname=${{ matrix.sources.output }}
         env:
-          TEXINPUTS: ":build:src//:"
+          TEXINPUTS: "{{ matrix.sources.input }}:./src//:.:"
 
       - name: Upload build assets (${{ matrix.sources.input }})
         uses: actions/upload-artifact@v2

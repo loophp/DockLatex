@@ -35,6 +35,8 @@
 \RequirePackage{times,mathptmx}
 \RequirePackage{translator,xspace}
 
+\graphicspath{./graphics/}
+
 \definecolor{umonsgreen}{rgb}{0.56862745,0.78039216,0.63137255}
 \definecolor{umonsdarkgreen}{rgb}{0.4,0.47,0.42}
 \definecolor{umonsblue}{rgb}{0.23,0.85,0.98}
@@ -301,7 +303,7 @@
   \advance\headheight by\voffset     \advance\headheight by1in
   \vbox to\headheight{%
     \vspace*{7mm}%
-    \hfill \includegraphics[width=45mm]{src/umons/graphics/UMONS}\vss}%
+    \hfill \includegraphics[width=45mm]{UMONS}\vss}%
 }
 
 %% \letterumons@address@left

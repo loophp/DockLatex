@@ -2,8 +2,9 @@ version: "3"
 
 services:
     texlive:
-        image: danteev/texlive
+        image: xucheng/texlive-full
         volumes:
             - .:/home
+        working_dir: /home
         environment:
             - TEXINPUTS

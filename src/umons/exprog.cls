@@ -203,13 +203,13 @@
         \noindent
         \hspace*{-\hoffset}\hspace*{-1in}\hspace*{-\oddsidemargin}%
         \hspace*{5mm}% visual
-        \includegraphics[width=0.22\paperwidth]{UMONS}
+        \includegraphics[width=0.22\paperwidth]{graphics/UMONS}
         \vss}}}}
 
 \newcommand\ps@firstpage{%
   \renewcommand\@mkboth[2]{}%
-  \IfFileExists{UMONS.pdf}{\exprog@firstpage@set@oddhead}{%
-    \IfFileExists{UMONS.png}{\exprog@firstpage@set@oddhead}{}}%
+  \IfFileExists{graphics/UMONS.pdf}{\exprog@firstpage@set@oddhead}{%
+    \IfFileExists{graphics/UMONS.png}{\exprog@firstpage@set@oddhead}{}}%
   \renewcommand\@oddfoot{\reset@font \hfil \thepage/\thetotalpage}%
   \let\@evenhead\@empty
   \let\@evenfoot\@oddfoot}

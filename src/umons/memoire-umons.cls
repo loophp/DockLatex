@@ -23,7 +23,7 @@
 % \addtolength{\textheight}{2cm}
 % \setlength{\parindent}{0pt}
 
-\RequirePackage{graphics}
+\RequirePackage{graphicx}
 % For the logos (use `xcolor' to avoid warnings if `xcolor' is used in
 % the document, e.g. with Tikz).  `xcolor' is not present in all distrib.
 %\PassOptionsToPackage{rgb}{xcolor}
@@ -208,7 +208,7 @@
           %\ifpdf@umons
           \begin{tabular}[t]{@{}l@{}}
             %\resizebox{!}{20mm}{\includegraphics{lorentz}}\\[-5mm]
-            \resizebox{!}{15mm}{\includegraphics{src/umons/graphics/UMONS_FS}}\\%
+            \resizebox{!}{15mm}{\includegraphics{graphics/UMONS_FS}}\\%
             \@institut
           \end{tabular}%
           %\fi
@@ -216,7 +216,7 @@
           % \vrule width 0.3pt height 11mm depth 4mm % (test)
           %\raisebox{-3.6mm}{% Sciences
           \raisebox{0mm}{%
-            \resizebox{!}{15mm}{\includegraphics{src/umons/graphics/UMONS+txt}}
+            \resizebox{!}{15mm}{\includegraphics{graphics/UMONS+txt}}
             %\resizebox{!}{15mm}{\includegraphics{UMONS}}
             % To adjust elements visually:
             %\llap{\raisebox{3mm}{\vrule width 30cm height 0pt depth 0.3pt}}%
