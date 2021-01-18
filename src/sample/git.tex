@@ -1,7 +1,7 @@
 \usepackage{xstring}
 \usepackage{catchfile}
 
-\newcommand{\gitfolder}{.git}
+\newcommand{\gitfolder}{../../.git}
 \CatchFileDef{\headfull}{\gitfolder/HEAD}{}
 \StrGobbleRight{\headfull}{1}[\head]
 \StrBehind[2]{\head}{/}[\branch]
