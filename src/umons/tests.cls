@@ -104,11 +104,11 @@
 \AtBeginDocument{% => override any other package (amsmath,...)
 \ifx\@ptsize\undefined
   %%% Maybe, using "slides" (SliTeX) class
-  \typeout{Warning: \string\big, \string\Big, \bigg, \string\Bigg\space 
+  \typeout{Warning: \string\big, \string\Big, \bigg, \string\Bigg\space
     are NOT re-defined and may be incorrect.}
 \else
 \ifcase \@ptsize
-  %%% 10pt ----------  
+  %%% 10pt ----------
   \def\big#1{\Delimiter@Enlarge@to@factor{1.1333333}{#1}}  % 8.5pt
   \def\Big#1{\Delimiter@Enlarge@to@factor{1.5333333}{#1}}  % 11.5 pt
   \def\bigg#1{\Delimiter@Enlarge@to@factor{1.9333333}{#1}} % 14.5 pt
@@ -390,7 +390,7 @@
   \tests@FirstPage
   \fi}
 
-% After \begin{document}, one may want to start another test in the 
+% After \begin{document}, one may want to start another test in the
 % same file
 % With a star: Same test but different course,... (merging)
 % Without: ``independent'' test, optional arg to redefine
@@ -432,7 +432,7 @@
   \let\@evenhead\@empty
   \let\@evenfoot\@oddfoot}
 
-  
+
 \newlength{\tests@titleskip}    \setlength{\tests@titleskip}{6pt}
 \newlength{\tests@rulethickness}\setlength{\tests@rulethickness}{0.5pt}
 \newcommand\tests@beforetext{3ex}
@@ -471,7 +471,7 @@
       {\tests@titlefont    \tests@title@firstpage}\cr
       \noalign{\vfill}
       \tests@numberfont   \tests@thetest %% Test n°...
-      \ifx\tests@date\empty \else  
+      \ifx\tests@date\empty \else
       \qquad \hfill \tests@namesfont (\tests@date)\fi
       {\tests@namesfont\strut}% make sure you get the correct depth
       \cr
@@ -559,7 +559,7 @@
 %% UMONS logo
 %%......................................................................
 \newcommand\ps@test{%
-  \let\@mkboth\@gobbletwo 
+  \let\@mkboth\@gobbletwo
   \renewcommand{\@oddhead}{{%
       \setbox0=\hbox{\includegraphics[height=11mm]{\tests@logo@file}}%
       \vbox to 0pt{\vss
@@ -577,7 +577,7 @@
         \hrule height 2\tests@rulethickness width\hsize
       }}}%
   \renewcommand\@oddfoot{\reset@font \hfil \tests@thepage/\thetotalpage}%
-  \let\@evenhead\@empty 
+  \let\@evenhead\@empty
   \let\@evenfoot\@oddfoot}
 
 \else
@@ -585,7 +585,7 @@
 %% Correction of the test
 %%......................................................................
 \newcommand\ps@test{%
-  \let\@mkboth\@gobbletwo 
+  \let\@mkboth\@gobbletwo
   \renewcommand\@oddhead{{%
       \setbox0=\hbox{{\tests@smallcorrection
           \rotatebox{10}{\translate{Correction}}}}%
@@ -604,14 +604,14 @@
         \hrule height 2\tests@rulethickness width\hsize
       }}}%
   \renewcommand\@oddfoot{\reset@font \hfil \tests@thepage/\thetotalpage}%
-  \let\@evenhead\@empty 
+  \let\@evenhead\@empty
   \let\@evenfoot\@oddfoot}
 
 \else
 %% Test (not correction)
 %%......................................................................
 \newcommand\ps@test{%
-  \let\@mkboth\@gobbletwo 
+  \let\@mkboth\@gobbletwo
   \renewcommand\@oddhead{{%
     \setbox0=\vbox{\tests@studentbox}%
     \vbox to 0pt{\vss
@@ -631,13 +631,13 @@
           }%
         \par\hrule height 2\tests@rulethickness width\hsize
         }%
-      \hfill 
+      \hfill
       \smash{\vtop{\unvbox0}}\par
       \hrule height 0pt depth 0pt %% This is the \vbox baseline...
       }%
     }}%
   \renewcommand\@oddfoot{\reset@font \hfil \tests@thepage/\thetotalpage}%
-  \let\@evenhead\@empty 
+  \let\@evenhead\@empty
   \let\@evenfoot\@oddfoot}
 
 \fi
@@ -1128,8 +1128,8 @@
 \renewcommand{\labelitemii}{{$\scriptstyle\blacktriangleright$}}
 
 \renewenvironment{itemize}{%
-  \ifnum\@itemdepth >\thr@@ \@toodeep   \else 
-  \advance\@itemdepth\@ne  
+  \ifnum\@itemdepth >\thr@@ \@toodeep   \else
+  \advance\@itemdepth\@ne
   \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
   \expandafter\list \csname\@itemitem\endcsname {%
     \setlength{\topsep}{0.5ex}%
@@ -1143,7 +1143,7 @@
 }{%
   \global\advance\@listdepth\m@ne \endtrivlist
 }
-  
+
 \AtBeginDocument{%
   \@ifundefined{frenchbsetup}{%
     \@ifundefined{StandardLayout}{}{\StandardLayout}%
@@ -1153,8 +1153,8 @@
 
 
 \newenvironment{itemizetext}{%
-  \ifnum\@itemdepth >\thr@@ \@toodeep   \else 
-  \advance\@itemdepth\@ne  
+  \ifnum\@itemdepth >\thr@@ \@toodeep   \else
+  \advance\@itemdepth\@ne
   \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
   \expandafter\list \csname\@itemitem\endcsname {%
     \setlength{\topsep}{3pt}%
@@ -1186,9 +1186,9 @@
 \renewcommand{\p@enumiii}{\p@enumii .}
 
 \renewenvironment{enumerate}{%
-  \ifnum \@enumdepth >\thr@@ \@toodeep 
-  \else 
-    \advance\@enumdepth\@ne 
+  \ifnum \@enumdepth >\thr@@ \@toodeep
+  \else
+    \advance\@enumdepth\@ne
     \edef\@enumctr{enum\romannumeral\the\@enumdepth}%
     \expandafter\list \csname label\@enumctr \endcsname {%
       \usecounter\@enumctr
@@ -1200,17 +1200,17 @@
     }%
   \fi
 }{%
-  \global\advance\@listdepth\m@ne 
-  \endtrivlist 
+  \global\advance\@listdepth\m@ne
+  \endtrivlist
 }
 
 \newenvironment{enumeratetext}{%
-  \ifnum \@enumdepth >\thr@@ \@toodeep 
-  \else 
-    \advance\@enumdepth\@ne 
+  \ifnum \@enumdepth >\thr@@ \@toodeep
+  \else
+    \advance\@enumdepth\@ne
     \edef\@enumctr{enum\romannumeral\the\@enumdepth}%
     \expandafter\list \csname label\@enumctr \endcsname {%
-      \usecounter\@enumctr 
+      \usecounter\@enumctr
       \setlength{\topsep}{3pt}%
       \setlength{\itemindent}{1.8em}%
       \setlength{\labelwidth}{\itemindent}%
@@ -1221,8 +1221,8 @@
     }%
   \fi
 }{%
-  \global\advance\@listdepth\m@ne 
-  \endtrivlist 
+  \global\advance\@listdepth\m@ne
+  \endtrivlist
 }
 
 %% True/False questions

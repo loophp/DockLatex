@@ -49,7 +49,7 @@
 %   urlcolor=slide@darkgreen,
 %   citecolor=slide@darkblue,
 %   linkcolor=slide@red,
-%   pdffitwindow=true, 
+%   pdffitwindow=true,
 %   pdfpagemode=None
 %   ]{hyperref}
   %%
@@ -214,18 +214,18 @@
 \renewcommand\labelenumi{(\theenumi)}
 
 \renewenvironment{enumerate}{%
-  \ifnum \@enumdepth >\thr@@ \@toodeep 
-  \else 
-    \advance\@enumdepth\@ne 
+  \ifnum \@enumdepth >\thr@@ \@toodeep
+  \else
+    \advance\@enumdepth\@ne
     \edef\@enumctr{enum\romannumeral\the\@enumdepth}%
     \expandafter\list \csname label\@enumctr \endcsname {%
-      \usecounter\@enumctr 
+      \usecounter\@enumctr
       \def\makelabel##1{\hss\llap{##1}}%
       \setlength{\parskip}{10pt plus 3pt minus5pt}%
       }%
   \fi}{%
-  \global\advance\@listdepth\m@ne 
-  \endtrivlist 
+  \global\advance\@listdepth\m@ne
+  \endtrivlist
   }
 
 
@@ -241,10 +241,10 @@
 
   \renewenvironment{itemize}{\bgroup
     \bbl@nonfrenchlistspacing % babel French redef \trivlist, undo it.
-    \ifnum\@itemdepth >\thr@@ \@toodeep   \else 
-      \advance\@itemdepth\@ne  
+    \ifnum\@itemdepth >\thr@@ \@toodeep   \else
+      \advance\@itemdepth\@ne
       \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
-      \expandafter\list \csname\@itemitem\endcsname 
+      \expandafter\list \csname\@itemitem\endcsname
         {\setlength{\topsep}{0pt}%
           \setlength{\itemsep}{\itemizesep}%
           \setlength{\leftmargin}{2.3ex}%

@@ -1,9 +1,13 @@
 INPUT ?= src/sample/index.tex
-LATEXMK_ARGS ?= -shell-escape -interaction=nonstopmode -file-line-error -output-directory=build
 OUTPUT ?= $(shell basename "$(shell dirname "$(INPUT)")")
+INPUT_DIR = $(shell dirname "$(INPUT)")
+MAKEFILE_DIR = $(shell pwd)
 DOCKER_COMPOSE = docker-compose
-RUN = ${DOCKER_COMPOSE} run texlive
 UP = ${DOCKER_COMPOSE} up
+OUTPUT_DIRECTORY = /home/build
+LATEXMK_ARGS ?= -cd -halt-on-error -MP -logfilewarninglist -pdf -shell-escape -interaction=nonstopmode -file-line-error -output-directory=$(OUTPUT_DIRECTORY)
+TEXINPUTS = "/home/$(INPUT_DIR)//:/home/src//:"
+RUN = ${DOCKER_COMPOSE} run -e TEXINPUTS=$(TEXINPUTS) texlive
 LATEXMK_COMMAND = $(RUN) latexmk $(LATEXMK_ARGS)
 
 .PHONY: build view
@@ -12,7 +16,10 @@ all : build
 
 build :
 	$(LATEXMK_COMMAND) -jobname=$(OUTPUT) $(INPUT)
-	$(RUN) chmod 777 build
+	make chmodbuild
+
+latexindent :
+	$(RUN) latexindent
 
 clean :
 	$(RUN) rm -rf build
@@ -21,9 +28,12 @@ lint :
 	$(RUN) lacheck $(INPUT)
 	$(RUN) chktex $(INPUT)
 
-watch:
-	$(LATEXMK_COMMAND) -pvc -jobname=$(OUTPUT) $(INPUT)
+chmodbuild:
 	$(RUN) chmod 777 build
 
+watch:
+	$(LATEXMK_COMMAND) -pvc -jobname=$(OUTPUT) $(INPUT)
+	make chmodbuild
+
 fresh:
-	make clean && make
+	make chmodbuild clean build
