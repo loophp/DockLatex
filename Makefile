@@ -1,7 +1,5 @@
 INPUT ?= src/sample/index.tex
 OUTPUT ?= $(shell basename "$(shell dirname "$(INPUT)")")
-INPUT_DIR = $(shell dirname "$(INPUT)")
-MAKEFILE_DIR = $(shell pwd)
 DOCKER_COMPOSE = docker-compose
 UP = ${DOCKER_COMPOSE} up
 OUTPUT_DIRECTORY = /home/build
