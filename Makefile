@@ -6,7 +6,7 @@ DOCKER_COMPOSE = docker-compose
 UP = ${DOCKER_COMPOSE} up
 OUTPUT_DIRECTORY = /home/build
 LATEXMK_ARGS ?= -cd -halt-on-error -MP -logfilewarninglist -pdf -shell-escape -interaction=nonstopmode -file-line-error -output-directory=$(OUTPUT_DIRECTORY)
-TEXINPUTS = "/home/$(INPUT_DIR)//:/home/src//:"
+TEXINPUTS = "/home/src//:"
 RUN = ${DOCKER_COMPOSE} run -e TEXINPUTS=$(TEXINPUTS) texlive
 LATEXMK_COMMAND = $(RUN) latexmk $(LATEXMK_ARGS)
 
