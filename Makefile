@@ -25,6 +25,8 @@ clean :
 lint :
 	$(RUN) lacheck $(INPUT)
 	$(RUN) chktex $(INPUT)
+	${RUN} latexindent -s -w $(INPUT)
+
 
 chmodbuild:
 	$(RUN) chmod 777 build

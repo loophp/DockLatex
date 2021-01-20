@@ -32,6 +32,7 @@ tasks:
     cmds:
       - "{{.RUN}} chktex {{.INPUT}}"
       - "{{.RUN}} lacheck {{.INPUT}}"
+      - "{{.RUN}} latexindent -s -w {{.INPUT}}"
 
   fresh:
     deps: [clean, build]
