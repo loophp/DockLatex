@@ -15,9 +15,12 @@ rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
 all : build
 
+%:
+	$(MAKE) build INPUT=src/$@/index.tex
+
 build :
 	$(LATEXMK_COMMAND) -jobname=$(OUTPUT) $(INPUT)
-	make chmodbuild
+	$(MAKE) chmodbuild
 
 latexindent :
 	$(RUN) latexindent
@@ -35,12 +38,12 @@ chmodbuild:
 
 watch:
 	$(LATEXMK_COMMAND) -pvc -jobname=$(OUTPUT) $(INPUT)
-	make chmodbuild
+	$(MAKE) chmodbuild
 
 fresh:
-	make chmodbuild clean build
+	$(MAKE) chmodbuild clean build
 
 buildall:
-	make clean
-	$(foreach file, $(wildcard src/**/index.tex), make build INPUT=$(file);)
+	$(MAKE) clean
+	$(foreach file, $(wildcard src/**/index.tex), $(MAKE) build INPUT=$(file);)
 
