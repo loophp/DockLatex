@@ -8,6 +8,9 @@ TEXINPUTS = "/home/src//:"
 RUN = ${DOCKER_COMPOSE} run -e TEXINPUTS=$(TEXINPUTS) texlive
 LATEXMK_COMMAND = $(RUN) latexmk $(LATEXMK_ARGS)
 
+# Make does not offer a recursive wildcard function, so here's one:
+rwildcard=$(wildcard $1$2) $(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
+
 .PHONY: build view
 
 all : build
@@ -23,10 +26,9 @@ clean :
 	$(RUN) rm -rf build
 
 lint :
-	$(RUN) lacheck $(INPUT)
-	$(RUN) chktex $(INPUT)
-	${RUN} latexindent -s -w $(INPUT)
-
+	$(foreach file, $(call rwildcard,$(shell dirname "$(INPUT)"),*.tex), $(RUN) lacheck $(file);)
+	$(foreach file, $(call rwildcard,$(shell dirname "$(INPUT)"),*.tex), $(RUN) chktex $(file);)
+	$(foreach file, $(call rwildcard,$(shell dirname "$(INPUT)"),*.tex), $(RUN) latexindent $(file);)
 
 chmodbuild:
 	$(RUN) chmod 777 build
