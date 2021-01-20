@@ -51,7 +51,13 @@ jobs:
         run: echo "::set-output name=version::$(git rev-parse --short HEAD)"
 
       - name: Compile document
-        run: make build INPUT=${{ matrix.sources.input }}
+        uses: xu-cheng/latex-action@v2
+        with:
+          working_directory: /github/workspace
+          root_file: ${{ matrix.sources.input }}.tex
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build -jobname=${{ matrix.sources.output }}
+        env:
+          TEXINPUTS: "/github/workspace/src//:"
 
       - name: Upload build assets (${{ matrix.sources.input }})
         uses: actions/upload-artifact@v2

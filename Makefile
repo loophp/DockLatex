@@ -2,8 +2,8 @@ INPUT ?= src/sample/index.tex
 OUTPUT ?= $(shell basename "$(shell dirname "$(INPUT)")")
 DOCKER_COMPOSE = docker-compose
 UP = ${DOCKER_COMPOSE} up
-OUTPUT_DIRECTORY = /home/build
-LATEXMK_ARGS ?= -cd -halt-on-error -MP -logfilewarninglist -pdf -shell-escape -interaction=nonstopmode -file-line-error -output-directory=$(OUTPUT_DIRECTORY)
+OUTPUT_DIRECTORY = build
+LATEXMK_ARGS ?= -halt-on-error -MP -logfilewarninglist -pdf -shell-escape -interaction=nonstopmode -file-line-error -output-directory=$(OUTPUT_DIRECTORY)
 TEXINPUTS = "/home/src//:"
 RUN = ${DOCKER_COMPOSE} run -e TEXINPUTS=$(TEXINPUTS) texlive
 LATEXMK_COMMAND = $(RUN) latexmk $(LATEXMK_ARGS)
@@ -37,3 +37,8 @@ watch:
 
 fresh:
 	make chmodbuild clean build
+
+buildall:
+	make clean
+	$(foreach file, $(wildcard src/**/index.tex), make build INPUT=$(file);)
+
