@@ -2,7 +2,7 @@ version: "3"
 
 services:
     texlive:
-        image: xucheng/texlive-full
+        image: ghcr.io/xu-cheng/texlive-full
         volumes:
             - .:/home
         working_dir: /home
