@@ -34,8 +34,8 @@ repository:
     allow_rebase_merge: false
     allow_squash_merge: false
     default_branch: master
-    description: "A docker-based LaTex environment for a quickstart and easy hands on."
-    topics: latex,docker
+    description: "A multi-platform Docker-based LaTeX workspace for a quickstart and easy hands on."
+    topics: latex,docker,quickstart
     has_downloads: true
     has_issues: true
     has_pages: false
