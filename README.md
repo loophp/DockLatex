@@ -71,14 +71,14 @@ The project comes with a handful of LaTeX sample projects:
 
 ## FAQ
 
-* Why using Docker?
+* Why use Docker?
 
   The use of Docker has been made in order to make that this would work equally on different OS. While Docker is not available on FreeBSD and being a user of FreeBSD it was a hard choice to make.
   Using Docker also help me to keep an up-to-date Texlive installation without all the hassle of updating stuff here and there.
 
-* Why having a Taskfile and a Makefile in the project?
+* Why use a Taskfile and a Makefile?
 
-  This project is a work in progress. Deciding between [Go Task][http go task] and [Make][http makefile] is something that hasn't been decided yet.
+  This project is a work in progress. I have not deciding yet between [Go Task][http go task] or [Make][http makefile].
 
 ## Todo / Ideas
 
