@@ -8,15 +8,17 @@
 
 ## Goals
 
-This project is an easy and quick way to build and publish [LateX][http latex] documents.
+(NoNameFoundYet) offers an easy way to create, build and publish [LaTeX][http latex] documents.
 
 The goals of this project are:
 
-* Automatize as much as possible all the things through a Makefile or a Taskfile,
-* It must stay operating system agnostic,
-* Provide an easy way to publish documents through Github Actions.
+* Automate as much as possible, by using a Makefile or a Taskfile;
+* To be agnostic of operating system; and
+* Provide an easy way to publish documents using 'Github Actions'.
 
 ## Usage
+
+The project includes a sample documtent, entitled index.tex.
 
 ### To build a document once
 
@@ -49,8 +51,7 @@ were generated.
 
 ## Documentation
 
-This project is a helper that helps you to produce one or more documents
-written with [LaTeX][http latex].
+This project helps you to create beautiful PDFs bt using [LaTeX][http latex].
 
 Document sources are in `src/`. Each document live in its own unique directory in `src/`.
 The entry file *must* be named `index.tex` in order to get built properly.
@@ -59,7 +60,7 @@ The resulting PDF files will be in the `build/` directory.
 
 ## Examples
 
-The project comes with various Latex projects:
+The project comes with a handful of LaTeX sample projects:
 
 * `src/analysis` and `src/probability`: [Computer Science Cheat Sheets][computer science cheat sheets] from Flavio Schneider.
 * `src/presentation`: A sample presentation
