@@ -1,0 +1,33 @@
+version: '3'
+
+vars:
+  INPUT: '{{.INPUT | default "src/sample/index.tex"}}'
+  OUTPUT: '`echo $(basename "$(dirname "{{.INPUT}}")")`'
+  DOCKER_COMPOSE: "docker-compose"
+  RUN: "{{.DOCKER_COMPOSE}} run texlive"
+  UP: "{{.DOCKER_COMPOSE}} --remove-orphans up"
+  LATEXMK_ARGS: "-shell-escape -interaction=nonstopmode -file-line-error -output-directory=build"
+  LATEXMK_COMMAND: "{{.RUN}} latexmk {{.LATEXMK_ARGS}}"
+
+tasks:
+  default:
+    deps: [fresh]
+
+  build:
+    cmds:
+      - "{{.LATEXMK_COMMAND}} -jobname={{.OUTPUT}} {{.INPUT}}"
+  clean:
+    cmds:
+    - "{{.RUN}} rm -rf build"
+
+  lint:
+    cmds:
+      - "{{.RUN}} chktex {{.INPUT}}"
+      - "{{.RUN}} lacheck {{.INPUT}}"
+
+  fresh:
+    deps: [clean, build]
+
+  watch:
+    cmds:
+      - "{{.LATEXMK_COMMAND}} -pvc -jobname={{.OUTPUT}} {{.INPUT}}"

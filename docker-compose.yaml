@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+    texlive:
+        image: danteev/texlive
+        volumes:
+            - .:/home
