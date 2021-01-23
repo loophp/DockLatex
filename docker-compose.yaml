@@ -5,3 +5,5 @@ services:
         image: danteev/texlive
         volumes:
             - .:/home
+        environment:
+            - TEXINPUT
