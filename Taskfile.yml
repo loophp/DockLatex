@@ -16,11 +16,15 @@ tasks:
   build:
     cmds:
       - "{{.LATEXMK_COMMAND}} -jobname={{.OUTPUT}} {{.INPUT}}"
-      - "{{.RUN}} chmod 777 build"
+      - task: chmodbuild
 
   clean:
     cmds:
       - "{{.RUN}} rm -rf build"
+
+  chmodbuild:
+    cmds:
+      - "{{.RUN}} chmod 777 build"
 
   lint:
     cmds:
@@ -33,4 +37,4 @@ tasks:
   watch:
     cmds:
       - "{{.LATEXMK_COMMAND}} -pvc -jobname={{.OUTPUT}} {{.INPUT}}"
-      - "{{.RUN}} chmod 777 build"
+      - task: chmodbuild
