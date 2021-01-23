@@ -6,4 +6,4 @@ services:
         volumes:
             - .:/home
         environment:
-            - TEXINPUT
+            - TEXINPUTS
