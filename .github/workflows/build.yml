@@ -52,13 +52,15 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: ${{ matrix.sources.input }}.tex
-          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -jobname=${{ matrix.sources.output }}
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -output-directory=build -jobname=${{ matrix.sources.output }}
+        env:
+          TEXINPUTS: ":build:src//:"
 
       - name: Upload build assets (${{ matrix.sources.input }})
         uses: actions/upload-artifact@v2
         with:
           name: ${{ matrix.sources.output }}
-          path: ${{ matrix.sources.output }}.pdf
+          path: build/${{ matrix.sources.output }}.pdf
 
   release:
     name: "Create tag/pre-release"

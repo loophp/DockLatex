@@ -7,7 +7,7 @@ vars:
   UP: "{{.DOCKER_COMPOSE}} --remove-orphans up"
   OUTPUT_DIRECTORY: build
   LATEXMK_ARGS: "-shell-escape -interaction=nonstopmode -file-line-error -output-directory={{.OUTPUT_DIRECTORY}}"
-  TEXINPUTS: "{{.TASKFILE_DIR}}:{{.OUTPUT_DIRECTORY}}:src/ec/style"
+  TEXINPUTS: "{{.TASKFILE_DIR}}:{{.OUTPUT_DIRECTORY}}:src//:"
   RUN: "{{.DOCKER_COMPOSE}} run -e TEXINPUTS={{.TEXINPUTS}} texlive"
   LATEXMK_COMMAND: "{{.RUN}} latexmk {{.LATEXMK_ARGS}}"
 
