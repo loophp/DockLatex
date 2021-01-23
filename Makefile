@@ -12,6 +12,7 @@ all : build
 
 build :
 	$(LATEXMK_COMMAND) -jobname=$(OUTPUT) $(INPUT)
+	$(RUN) chmod 777 build
 
 clean :
 	$(RUN) rm -rf build
@@ -22,6 +23,7 @@ lint :
 
 watch:
 	$(LATEXMK_COMMAND) -pvc -jobname=$(OUTPUT) $(INPUT)
+	$(RUN) chmod 777 build
 
 fresh:
 	make clean && make
