@@ -38,7 +38,8 @@ The resulting PDF file will be in the `build` directory.
 The project comes with various Latex projects:
 
 * `src/analysis` and `src/probability`: [Computer Science Cheat Sheets][computer science cheat sheets] from Flavio Schneider.
-* `src/sample`: A basic sample page
+* `src/presentation`: A sample presentation
+* `src/sample`: A sample page
 * `src/umons`: [Latex classes][umons latex classes] form [uMons university][http umons].
 * `src/umons-*`: Example documents using uMons classes.
 

@@ -26,6 +26,8 @@ jobs:
         sources:
           - input: src/sample/index
             output: sample
+          - input: src/presentation/index
+            output: presentation
           - input: src/analysis/index
             output: analysis
           - input: src/probability/index
@@ -84,6 +86,7 @@ jobs:
       matrix:
         assets:
           - input: sample
+          - input: presentation
           - input: analysis
           - input: probability
           - input: umons-exprog
