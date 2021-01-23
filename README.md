@@ -3,6 +3,8 @@
 ## Dependencies
 
 * [Go Task][http go task] or [Makefile][http makefile]
+* [Docker][http docker]
+* [Docker-compose][http docker-compose]
 
 ## Goals
 
@@ -43,6 +45,13 @@ The project comes with various Latex projects:
 * `src/umons`: [Latex classes][umons latex classes] form [uMons university][http umons].
 * `src/umons-*`: Example documents using uMons classes.
 
+## FAQ
+
+* Why using Docker?
+
+  The use of Docker has been made in order to make that this would work equally on different OS. While Docker is not available on FreeBSD and being a user of FreeBSD it was a hard choice to make.
+  Using Docker also help me to keep an up-to-date Texlive installation without all the hassle of updating stuff here and there.
+
 ## Todo / Ideas
 
 * Decide between Go Task and Makefile
@@ -52,9 +61,8 @@ The project comes with various Latex projects:
 
 [http go task]: https://taskfile.dev
 [http makefile]: https://www.gnu.org/software/make/
-<<<<<<< HEAD
-=======
+[http docker]: https://www.docker.com/
+[http docker-compose]: https://docs.docker.com/compose/
 [computer science cheat sheets]: https://github.com/flavioschneider/ethzcheatsheets
 [umons latex classes]: https://github.com/Chris00/latex-umons
 [http umons]: https://web.umons.ac.be/
->>>>>>> 3fe1b08... Documentation
