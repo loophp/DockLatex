@@ -1,0 +1,41 @@
+\documentclass{beamer}
+\usetheme{Boadilla}
+
+\title{Presentation title}
+\subtitle{Using Latex and Beamer}
+\author{Pol Dellaiera}
+\institute{Institute name here}
+\date{\today}
+
+\input{src/sample/git}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+Version {\gitrevisionlong}
+\end{frame}
+
+\frame {
+    \frametitle{Sample Page 1}
+    \[\frac{-b \pm \sqrt{b^2 - c}}{2a}\]
+}
+
+\frame{
+		\frametitle{Sample Page 2}
+		\framesubtitle{An Example of Lists}
+		\begin{itemize}
+			\item 1
+			\item 2
+			\item 3
+		\end{itemize}
+}
+
+\frame{
+    \frametitle{Paragraph Content}
+    This is a paragraph.
+}
+
+\end{document}
+
+
