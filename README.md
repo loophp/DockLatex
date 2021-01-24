@@ -51,7 +51,7 @@ were generated.
 
 ## Documentation
 
-This project helps you to create beautiful PDFs bt using [LaTeX][http latex].
+This project helps you to create beautiful PDFs by using [LaTeX][http latex].
 
 Document sources are in `src/`. Each document live in its own unique directory in `src/`.
 The entry file *must* be named `index.tex` in order to get built properly.
