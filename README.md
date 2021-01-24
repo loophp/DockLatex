@@ -78,7 +78,7 @@ The project comes with a handful of LaTeX sample projects:
 
 * Why use a Taskfile and a Makefile?
 
-  This project is a work in progress. I have not deciding yet between [Go Task][http go task] or [Make][http makefile].
+  This project is a work in progress. I have not yet decided between [Go Task][http go task] or [Make][http makefile].
 
 ## Todo / Ideas
 
