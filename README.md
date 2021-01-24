@@ -51,7 +51,7 @@ were generated.
 
 ## Documentation
 
-This project helps you to create beautiful PDFs bt using [LaTeX][http latex].
+This project helps you to create beautiful PDFs by using [LaTeX][http latex].
 
 Document sources are in `src/`. Each document live in its own unique directory in `src/`.
 The entry file *must* be named `index.tex` in order to get built properly.
@@ -78,7 +78,7 @@ The project comes with a handful of LaTeX sample projects:
 
 * Why use a Taskfile and a Makefile?
 
-  This project is a work in progress. I have not deciding yet between [Go Task][http go task] or [Make][http makefile].
+  This project is a work in progress. I have not yet decided between [Go Task][http go task] or [Make][http makefile].
 
 ## Todo / Ideas
 
