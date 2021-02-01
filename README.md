@@ -13,12 +13,10 @@ DockLatex offers an easy way to create, build and publish [LaTeX][http latex] do
 The goals of this project are:
 
 * Automate as much as possible, by using a Makefile or a Taskfile;
-* To be agnostic of operating system; and
+* To be agnostic of operating system;
 * Provide an easy way to publish documents using 'Github Actions'.
 
 ## Usage
-
-The project includes a sample documtent, entitled index.tex.
 
 ### To build a document once
 
@@ -51,7 +49,7 @@ were generated.
 
 ## Documentation
 
-This project helps you to create beautiful PDFs by using [LaTeX][http latex].
+This project helps you to create beautiful PDFs, using [LaTeX][http latex].
 
 Document sources are in `src/`. Each document live in its own unique directory in `src/`.
 The entry file *must* be named `index.tex` in order to get built properly.
@@ -82,13 +80,13 @@ The project comes with a handful of LaTeX sample projects:
 
 ## Todo / Ideas
 
-* Find a proper name
+* ~~Find a proper name~~
 * Decide between [Go Task][http go task] and [Makefile][http makefile].
 * More documentation on how to use the command and create a new document
 * ~~In a LaTex document, find a way to use local paths instead of paths from the root~~
 * Should we use a Makefile/Taskfile per document directory?
 * Decide which example project(s) to include in the OpenSource version
-* Add a changelog
+* ~~Add a changelog~~
 * Create proper issues in Github
 
 [http go task]: https://taskfile.dev
