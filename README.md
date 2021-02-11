@@ -47,6 +47,20 @@ were generated.
 * `task clean`
 * `make clean`
 
+### To convert to another format
+
+#### Convert to Markdown
+
+* `task pandoc INPUT=src/sample/index.tex OUTPUT=build/sample.md`
+* `make pandoc INPUT=src/sample/index.tex OUTPUT=build/sample.md`
+
+#### Convert to HTML
+
+* `task pandoc INPUT=src/sample/index.tex OUTPUT=build/sample.html`
+* `make pandoc INPUT=src/sample/index.tex OUTPUT=build/sample.html`
+
+You can use any format supported by [Pandoc][http pandoc].
+
 ## Documentation
 
 This project helps you to create beautiful PDFs, using [LaTeX][http latex].
@@ -101,3 +115,4 @@ The project comes with a handful of LaTeX sample projects:
 [http lacheck]: https://ctan.org/pkg/lacheck
 [http chktex]: https://ctan.org/pkg/chktex
 [http latexindent]: https://github.com/cmhughes/latexindent.pl
+[http pandoc]: https://pandoc.org/
