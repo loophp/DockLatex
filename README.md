@@ -22,22 +22,22 @@ The goals of this project are:
 
 This will try to convert the `INPUT` file into a PDF file.
 
-* `task build INPUT=src/sample/index.tex`
-* `make build INPUT=src/sample/index.tex`
+* `task docker-build INPUT=src/sample/index.tex`
+* `make docker-build INPUT=src/sample/index.tex`
 
 ### To watch a document and enable hot reload/rebuild
 
 Continually update the PDF files whenever changes are made to source files.
 
-* `task watch INPUT=src/sample/index.tex`
-* `make watch INPUT=src/sample/index.tex`
+* `task docker-watch INPUT=src/sample/index.tex`
+* `make docker-watch INPUT=src/sample/index.tex`
 
 ### To run some checks
 
 This will run [lacheck][http lacheck], [chktex][http chktex] and [latexindent][http latexindent] on all the `.tex` files recursively.
 
-* `task lint INPUT=src/sample/index.tex`
-* `make lint INPUT=src/sample/index.tex`
+* `task docker-lint INPUT=src/sample/index.tex`
+* `make docker-lint INPUT=src/sample/index.tex`
 
 ### To remove build files
 
@@ -51,13 +51,13 @@ were generated.
 
 #### Convert to Markdown
 
-* `task pandoc INPUT=src/sample/index.tex OUTPUT=build/sample.md`
-* `make pandoc INPUT=src/sample/index.tex OUTPUT=build/sample.md`
+* `task docker-pandoc INPUT=src/sample/index.tex OUTPUT=build/sample.md`
+* `make docker-pandoc INPUT=src/sample/index.tex OUTPUT=build/sample.md`
 
 #### Convert to HTML
 
-* `task pandoc INPUT=src/sample/index.tex OUTPUT=build/sample.html`
-* `make pandoc INPUT=src/sample/index.tex OUTPUT=build/sample.html`
+* `task docker-pandoc INPUT=src/sample/index.tex OUTPUT=build/sample.html`
+* `make docker-pandoc INPUT=src/sample/index.tex OUTPUT=build/sample.html`
 
 You can use any format supported by [Pandoc][http pandoc].
 
