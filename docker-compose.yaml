@@ -13,3 +13,15 @@ services:
         volumes:
             - .:/data
         working_dir: /data
+
+    imagemagick:
+        image: dpokidov/imagemagick
+        volumes:
+            - .:/data
+        working_dir: /data
+
+    plantuml:
+        image: miy4/plantuml
+        volumes:
+            - .:/data
+        working_dir: /data
